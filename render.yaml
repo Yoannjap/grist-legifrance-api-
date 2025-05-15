@@ -3,8 +3,8 @@ services:
     name: grist-legifrance-cron
     env: python
     plan: free
-    buildCommand: ""
-    startCommand: "python run.py"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 run.py"
     schedule: "*/5 * * * *"  # Toutes les 5 minutes
     envVars:
       - key: GRIST_API_KEY
