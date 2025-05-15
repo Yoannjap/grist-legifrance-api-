@@ -1,0 +1,21 @@
+services:
+  - type: cron
+    name: grist-legifrance-cron
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python run.py"
+    schedule: "*/5 * * * *"  # Toutes les 5 minutes
+    envVars:
+      - key: GRIST_API_KEY
+        sync: false
+      - key: GRIST_DOC_ID
+        sync: false
+      - key: GRIST_TABLE
+        sync: false
+      - key: GRIST_SEARCH_TABLE
+        sync: false
+      - key: LEGIFRANCE_CLIENT_ID
+        sync: false
+      - key: LEGIFRANCE_CLIENT_SECRET
+        sync: false
